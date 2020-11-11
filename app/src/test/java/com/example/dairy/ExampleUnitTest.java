@@ -1,4 +1,4 @@
-package com.example.leather_store;
+package com.example.dairy;
 
 import org.junit.Test;
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.leather_store">
+    package="com.example.dairy">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -13,23 +13,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name="com.example.leather_store.MyOrders"></activity>
-        <activity android:name="com.example.leather_store.Order" />
-        <activity android:name="com.example.leather_store.MainActivity" />
-        <activity android:name="com.example.leather_store.Login">
+        <activity android:name="com.example.dairy.MyOrders"></activity>
+        <activity android:name="com.example.dairy.Order" />
+        <activity android:name="com.example.dairy.MainActivity" />
+        <activity android:name="com.example.dairy.Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.leather_store.Register" />
-        <activity android:name="com.example.leather_store.Change_Password" />
+        <activity android:name="com.example.dairy.Register" />
+        <activity android:name="com.example.dairy.Change_Password" />
         <activity
-            android:name="com.example.leather_store.MyProfile"
+            android:name="com.example.dairy.MyProfile"
             android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity android:name="com.example.leather_store.Main2Activity" />
-        <activity android:name="com.example.leather_store.Cart" />
+        <activity android:name="com.example.dairy.Main2Activity" />
+        <activity android:name="com.example.dairy.Cart" />
     </application>
 
 </manifest>

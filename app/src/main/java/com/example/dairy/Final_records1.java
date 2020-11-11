@@ -1,5 +1,5 @@
 
-package com.example.leather_store;
+package com.example.dairy;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

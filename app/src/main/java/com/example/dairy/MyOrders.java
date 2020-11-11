@@ -1,4 +1,4 @@
-package com.example.leather_store;
+package com.example.dairy;
 
 import android.content.Context;
 import android.os.Bundle;
