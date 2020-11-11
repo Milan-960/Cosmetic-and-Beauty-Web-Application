@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="170dp"
+    android:background="@drawable/store"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/header_image"
+        android:layout_width="80dp"
+        android:layout_height="85dp"
+        android:src="@drawable/jim"
+        app:civ_background_color="#80000000"
+        app:civ_border_width="0dp" />
+
+    <TextView
+
+        android:id="@+id/putname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@color/white"
+        android:text="Jim Hopper"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/putemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:text="hawkins@gmail.com"
+        android:textColor="@android:color/black" />
+
+</LinearLayout>

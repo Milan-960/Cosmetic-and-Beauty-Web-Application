@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Leather Store</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="movies_time">Movies Time</string>
+    <string name="firstname">First Name</string>
+    <string name="lastname">Last Name</string>
+    <string name="username">Name</string>
+    <string name="email">Email Address</string>
+    <string name="address">Address</string>
+    <string name="password">Password</string>
+    <string name="old_password">Old Password</string>
+    <string name="Change_password">Change Password</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="city">City</string>
+    <string name="mobile">Mobile No.</string>
+    <string name="login">Login</string>
+    <string name="register">Sign Up</string>
+    <string name="confirm">Confirm</string>
+    <string name="update">Update</string>
+    <string name="reg_alert">Already a member? Login Here</string>
+    <string name="login_alert">New User? Register Here</string>
+
+    <string-array name="count">
+
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+
+    </string-array>
+</resources>

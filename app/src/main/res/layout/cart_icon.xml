@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@android:style/Widget.ActionButton"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/cart_container"
+      >
+
+
+    <ImageView
+        android:id="@+id/cart_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/shopping_cart" />
+
+
+    <com.nex3z.notificationbadge.NotificationBadge
+        android:id="@+id/badge"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_alignTop="@id/cart_img"
+        android:layout_marginLeft="-10dp"
+        android:layout_marginTop="-10dp"
+        android:layout_toRightOf="@id/cart_img"
+        android:textColor="@android:color/holo_orange_light"
+        app:nbMaxTextLength="2"
+        app:nbAnimationEnabled="false"/>
+
+    <!--<TextView-->
+    <!--android:id="@+id/cart_count"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="36dp"-->
+    <!--android:layout_alignParentStart="true"-->
+    <!--android:layout_alignParentTop="true"-->
+    <!--android:layout_marginStart="33dp"-->
+    <!--android:layout_marginTop="14dp"-->
+    <!--android:background="@color/colorAccent"-->
+    <!--android:gravity="center"-->
+    <!--android:text="10"-->
+    <!--android:textColor="@android:color/black"-->
+    <!--android:textSize="18sp" />-->
+
+
+</RelativeLayout>

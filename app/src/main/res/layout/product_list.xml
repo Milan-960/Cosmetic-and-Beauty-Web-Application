@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Product Name"
+            android:textSize="20sp"
+            android:id="@+id/txtname"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price"
+            android:textSize="20sp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/txtprice"/>
+
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:background="@android:drawable/screen_background_light_transparent"
+            android:text="Add "
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp" />
+
+    </LinearLayout>-->
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            >
+
+            <ImageView
+                android:id="@+id/img_product"
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:src="@drawable/profile_circle"/>
+
+            <TextView
+                android:id="@+id/txt_product_name"
+                android:layout_marginLeft="18dp"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:text="Mi Led TV 4A Pro"
+                android:textSize="15sp"
+                android:padding="2dp"
+                android:textStyle="bold"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:layout_toRightOf="@id/img_product"
+                android:textColor="@android:color/black"
+                />
+
+            <TextView
+                android:id="@+id/txt_product_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_product_name"
+                android:layout_marginLeft="18dp"
+                android:layout_toRightOf="@id/img_product"
+                android:padding="2dp"
+
+                android:text="Rs 50"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold" />
+
+
+            <Button
+                android:id="@+id/add"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="66dp"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@id/txt_product_name"
+                android:background="@color/colorPrimary"
+                android:text="Add"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <!--<View
+
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/darkBlue"
+        />-->
+
+</androidx.cardview.widget.CardView>
