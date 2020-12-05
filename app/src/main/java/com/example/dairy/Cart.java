@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -51,6 +50,8 @@ public class Cart extends AppCompatActivity {
     private ListView listView_cart;
 
     private SharedPreferences preferences;
+
+    private int grand_value = 0;
     private String UserId;
 //private ProgressDialog progressDialog;
 
@@ -156,7 +157,7 @@ public class Cart extends AppCompatActivity {
     public void proceed_to_pay(View view) {
 
         Intent intent = new Intent(context, Order.class);
-        intent.putExtra("amount", product_amount.getText().toString());
+        intent.putExtra("amount", grand_value);
         startActivity(intent);
         finish();
     }
@@ -503,6 +504,8 @@ public class Cart extends AppCompatActivity {
 
 
             product_amount.setText("Rs. " + String.valueOf(records1.getGrandTotal()));
+
+            grand_value = records1.getGrandTotal();
 
             spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override

@@ -6,9 +6,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,14 +35,15 @@ public class Order extends AppCompatActivity {
     TextView tv_name, tv_amount;
     EditText edt_address, edt_email, edt_mobile;
     RadioButton radioButton, radioButton2;
+    RadioGroup radioGroup;
 
-    private String name, address, email, mobile, order_type, amount, userId;
+    private String name, address, email, mobile, order_type, userId;
 
     private SharedPreferences preferences;
 
     private Context context = this;
 
-    private int wallet = 0;
+    private int wallet, amount = 0;
 
 
     @Override
@@ -67,14 +68,15 @@ public class Order extends AppCompatActivity {
 
         tv_name.setText(name);
         edt_address.setText(address);
+        edt_address.setSelection(edt_address.getText().length());
         edt_mobile.setText(mobile);
         edt_email.setText(email);
 
     }
 
     private void intent() {
-        amount = getIntent().getStringExtra("amount");
-        tv_amount.setText(amount);
+        amount = getIntent().getIntExtra("amount", 0);
+        tv_amount.setText("Rs. " + amount);
     }
 
     private void init() {
@@ -85,20 +87,20 @@ public class Order extends AppCompatActivity {
         edt_mobile = (EditText) findViewById(R.id.edt_mobile);
         edt_address = (EditText) findViewById(R.id.edt_address);
 
-        radioButton = (RadioButton) findViewById(R.id.radio_cod);
-        radioButton2 = (RadioButton) findViewById(R.id.radio_online);
+        radioGroup = findViewById(R.id.radio_group);
+        radioButton = findViewById(R.id.radio_cod);
+        radioButton2 = findViewById(R.id.radio_online);
 
-        radioButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                order_type = "COD";
-            }
-        });
 
-        radioButton2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                order_type = "Online";
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                if (checkedId == R.id.radio_cod) {
+                    order_type = "COD";
+                } else {
+                    order_type = "Online";
+                }
             }
         });
 
@@ -107,14 +109,10 @@ public class Order extends AppCompatActivity {
     }
 
     public void place_order(View view) {
-
-
         getMoney();
-
-
     }
 
-    private void displayDialog(int wallet) {
+    private void displayDialog(final int wallet) {
 
         new AlertDialog.Builder(context)
                 .setTitle("Your Wallet")
@@ -124,14 +122,17 @@ public class Order extends AppCompatActivity {
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
 
-                        final_order(tv_name.getText().toString(), tv_amount.getText().toString(), edt_email.getText().toString(), edt_mobile.getText().toString(), edt_address.getText().toString());
+
+                        if (wallet < amount) {
+                            Toast.makeText(context, "Insufficient Balance in wallet", Toast.LENGTH_SHORT).show();
+                        } else {
+                            final_order(tv_name.getText().toString(), tv_amount.getText().toString(), edt_email.getText().toString(), edt_mobile.getText().toString(), edt_address.getText().toString());
+                        }
 
                     }
                 })
 
-                // A null listener allows the button to dismiss the dialog and take no further action.
                 .setNegativeButton(android.R.string.no, null)
-                .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
     }
 
@@ -145,9 +146,7 @@ public class Order extends AppCompatActivity {
                     JSONObject jsonObject = new JSONObject(response);
                     if (!jsonObject.getBoolean("error")) {
                         Toast.makeText(Order.this, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
-
                         openActivity(MyOrders.class);
-                        return;
                     } else {
                         Toast.makeText(Order.this, jsonObject.getString("message"), Toast.LENGTH_SHORT).show();
 
@@ -177,6 +176,7 @@ public class Order extends AppCompatActivity {
                 params.put("amount", amount);
                 params.put("mobile", mobile);
                 params.put("address", address);
+                params.put("order_type", order_type);
 
 
                 return params;

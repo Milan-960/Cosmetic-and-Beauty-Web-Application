@@ -152,19 +152,25 @@
                 android:textColor="@color/colorBlack"
                 android:textSize="15sp" />
 
-            <RadioButton
-                android:id="@+id/radio_cod"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="COD" />
+            <RadioGroup
+                android:id="@+id/radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <RadioButton
-                android:id="@+id/radio_online"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="Online" />
+                <RadioButton
+                    android:id="@+id/radio_cod"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="COD" />
+
+                <RadioButton
+                    android:id="@+id/radio_online"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Online" />
+            </RadioGroup>
 
         </LinearLayout>
 

@@ -70,7 +70,7 @@ public class WalletActivity extends AppCompatActivity {
 
         Log.d(TAG, "Amount - " + amount + "---ID  " + UserId + "----Url  " + url);
 
-        Call<Final_Model1> call = Api.getPostService().AddMoney(url, amount, UserId);
+        Call<Final_Model1> call = Api.getPostService().AddMoney(url, UserId, amount);
         call.enqueue(new Callback<Final_Model1>() {
             @Override
             public void onResponse(Call<Final_Model1> call, Response<Final_Model1> response) {
@@ -81,6 +81,7 @@ public class WalletActivity extends AppCompatActivity {
                         Final_Model1 model1 = response.body();
 
                         Toast.makeText(context, model1.getMessage(), Toast.LENGTH_SHORT).show();
+                        editText.setText(null);
                         getMoney();
                     }
                 }
