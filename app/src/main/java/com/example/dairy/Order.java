@@ -1,15 +1,18 @@
 package com.example.dairy;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.AuthFailureError;
@@ -24,17 +27,22 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+
 public class Order extends AppCompatActivity {
 
     TextView tv_name, tv_amount;
     EditText edt_address, edt_email, edt_mobile;
-    RadioButton radioButton;
+    RadioButton radioButton, radioButton2;
 
     private String name, address, email, mobile, order_type, amount, userId;
 
     private SharedPreferences preferences;
 
     private Context context = this;
+
+    private int wallet = 0;
 
 
     @Override
@@ -78,17 +86,53 @@ public class Order extends AppCompatActivity {
         edt_address = (EditText) findViewById(R.id.edt_address);
 
         radioButton = (RadioButton) findViewById(R.id.radio_cod);
-        radioButton.setEnabled(true);
+        radioButton2 = (RadioButton) findViewById(R.id.radio_online);
 
-        order_type = "COD";
+        radioButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                order_type = "COD";
+            }
+        });
+
+        radioButton2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                order_type = "Online";
+            }
+        });
+
 
         getSupportActionBar().setTitle("Order Details");
     }
 
     public void place_order(View view) {
 
-        final_order(tv_name.getText().toString(), tv_amount.getText().toString(), edt_email.getText().toString(), edt_mobile.getText().toString(), edt_address.getText().toString());
-        return;
+
+        getMoney();
+
+
+    }
+
+    private void displayDialog(int wallet) {
+
+        new AlertDialog.Builder(context)
+                .setTitle("Your Wallet")
+                .setMessage("Wallet Balance " + wallet)
+
+
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        final_order(tv_name.getText().toString(), tv_amount.getText().toString(), edt_email.getText().toString(), edt_mobile.getText().toString(), edt_address.getText().toString());
+
+                    }
+                })
+
+                // A null listener allows the button to dismiss the dialog and take no further action.
+                .setNegativeButton(android.R.string.no, null)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
     }
 
     private void final_order(final String name, final String amount, final String email, final String mobile, final String address) {
@@ -140,6 +184,36 @@ public class Order extends AppCompatActivity {
         };
 
         Volley.newRequestQueue(this).add(request);
+    }
+
+
+    private void getMoney() {
+
+        String url = Api.URL_GET_MONEY;
+
+        Call<Final_Model1> call = Api.getPostService().getMoney(url, userId);
+        call.enqueue(new Callback<Final_Model1>() {
+            @Override
+            public void onResponse(Call<Final_Model1> call, retrofit2.Response<Final_Model1> response) {
+
+                if (response.isSuccessful()) {
+
+                    if (!response.body().getError()) {
+                        Final_Model1 model1 = response.body();
+
+                        wallet = model1.getRecords().get(0).getWallet();
+                        displayDialog(wallet);
+                    }
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<Final_Model1> call, Throwable t) {
+
+                Toast.makeText(context, t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 

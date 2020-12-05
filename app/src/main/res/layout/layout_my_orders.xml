@@ -1,74 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="5dp"
     android:elevation="15dp"
-    card_view:cardCornerRadius="15dp"
-    card_view:contentPadding="15dp">
-
+    card_view:contentPadding="5dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="match_parent"
         android:orientation="horizontal"
+        android:padding="10dp"
         android:weightSum="1">
 
         <ImageView
             android:id="@+id/img_product"
-            android:layout_width="70dp"
-            android:layout_height="60dp"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="12dp"
             android:layout_weight="0.2"
             android:src="@drawable/profile_circle" />
 
         <LinearLayout
+
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="60dp"
             android:layout_weight="0.8"
             android:orientation="vertical">
 
 
-            <TextView
-                android:id="@+id/txt_product_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="0.3"
-                android:gravity="center"
-                android:text="Product Name"
-                android:textAllCaps="true"
-                android:textColor="@color/colorBlack"
-                android:textSize="15sp"
-                android:textStyle="normal" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp">
 
-            <TextView
-                android:id="@+id/txt_product_price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="0.3"
-                android:gravity="center"
-                android:text="Rs. 50"
-                android:textAllCaps="true"
-                android:textColor="@color/colorBlack"
-                android:textSize="15sp"
-                android:textStyle="normal" />
+                <TextView
+                    android:id="@+id/txt_product_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Product Name"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
 
-            <TextView
-                android:id="@+id/txt_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="0.2"
-                android:gravity="center"
-                android:text="20-02-2020"
-                android:textAllCaps="true"
-                android:textColor="@color/colorBlack"
-                android:textSize="15sp"
-                android:textStyle="normal" />
+                <TextView
+                    android:id="@+id/txt_product_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txt_product_name"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Rs. 50"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
+
+
+                <TextView
+                    android:id="@+id/txt_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center"
+                    android:layout_toEndOf="@id/txt_product_name"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="20-02-2020"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="12sp"
+                    android:textStyle="normal" />
+
+            </RelativeLayout>
 
 
         </LinearLayout>
@@ -117,4 +128,4 @@
         </RelativeLayout>-->
 
 
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>

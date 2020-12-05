@@ -13,23 +13,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name="com.example.dairy.MyOrders"></activity>
-        <activity android:name="com.example.dairy.Order" />
-        <activity android:name="com.example.dairy.MainActivity" />
-        <activity android:name="com.example.dairy.Login">
+        <activity android:name=".WalletActivity"></activity>
+        <activity android:name=".MyOrders" />
+        <activity android:name=".Order" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.dairy.Register" />
-        <activity android:name="com.example.dairy.Change_Password" />
+        <activity android:name=".Register" />
+        <activity android:name=".Change_Password" />
         <activity
-            android:name="com.example.dairy.MyProfile"
+            android:name=".MyProfile"
             android:windowSoftInputMode="stateHidden|adjustResize" />
-        <activity android:name="com.example.dairy.Main2Activity" />
-        <activity android:name="com.example.dairy.Cart" />
+        <activity android:name=".Main2Activity" />
+        <activity android:name=".Cart" />
     </application>
 
 </manifest>

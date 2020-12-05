@@ -105,7 +105,7 @@
                     android:layout_height="wrap_content"
                     android:background="@color/colorPrimary"
                     android:onClick="proceed_to_pay"
-                    android:text="Proceed to Pay"
+                    android:text="Checkout"
                     android:textColor="@color/white"
                     android:textSize="20sp" />
 

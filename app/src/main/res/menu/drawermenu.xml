@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
 
 
     <group android:checkableBehavior="single">
@@ -16,13 +14,10 @@
             android:icon="@drawable/ic_message"
             android:title="My Orders" />
         <item
-            android:id="@+id/about"
+            android:id="@+id/wallet"
             android:icon="@drawable/ic_payment"
-            android:title="About Us" />
-        <item
-            android:id="@+id/contact"
-            android:icon="@drawable/ic_contacts"
-            android:title="Contact Us" />
+            android:title="Wallet" />
+
     </group>
 
     <item

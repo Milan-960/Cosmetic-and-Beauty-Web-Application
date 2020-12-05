@@ -37,6 +37,10 @@ public class Final_records1 {
     @Expose
     private int totalPrice;
 
+    @SerializedName("wallet")
+    @Expose
+    private int wallet;
+
     @SerializedName("grand_total")
     @Expose
     private int grandTotal;
@@ -211,5 +215,14 @@ public class Final_records1 {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+
+    public int getWallet() {
+        return wallet;
+    }
+
+    public void setWallet(int wallet) {
+        this.wallet = wallet;
     }
 }

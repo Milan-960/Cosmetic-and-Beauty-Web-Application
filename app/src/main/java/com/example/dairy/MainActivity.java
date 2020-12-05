@@ -143,8 +143,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         recyclerView_category_list = (RecyclerView) findViewById(R.id.recycler_category);
         recyclerView_category_list.setHasFixedSize(true);
 //        recyclerView_category_list.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-        recyclerView_category_list.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        category_adapter = new Category_Adapter(list, MainActivity.this);
+         category_adapter = new Category_Adapter(list, MainActivity.this);
         recyclerView_category_list.setAdapter(category_adapter);
 
     }
@@ -211,12 +210,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 openActivity(MyOrders.class);
                 return true;
-            case R.id.about:
-
+            case R.id.wallet:
+                openActivity(WalletActivity.class);
                 return true;
-            case R.id.contact:
 
-                return true;
             case R.id.change_password:
 
 
