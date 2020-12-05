@@ -29,8 +29,6 @@ public class Api {
     public static final String URL_UPDATE_CART = root_url + "updatecart&qty=";
     public static final String URL_GET_CART_COUNT = root_url + "count";
     public static final String URL_GET_CATEGORY = root_url + "category";
-    public static final String URL_ADD_MONEY = root_url + "add_money";
-    public static final String URL_GET_MONEY = root_url + "get_money";
     public static final String URL_GET_MY_ORDER = root_url + "my_order_details";
 
 
@@ -49,10 +47,7 @@ public class Api {
 
         if (postService == null) {
 
-            Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(url3)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
+            Retrofit retrofit = new Retrofit.Builder().baseUrl(url3).addConverterFactory(GsonConverterFactory.create()).build();
             postService = retrofit.create(PostService.class);
 
 
@@ -118,21 +113,7 @@ public class Api {
                 @Field("user_id") String user_id
         );
 
-        @FormUrlEncoded
-        @POST
-        Call<Final_Model1> AddMoney(
-                @Url String url,
-                @Field("user_id") String user_id,
-                @Field("amount") String amount
-        );
 
-        @FormUrlEncoded
-        @POST
-        Call<Final_Model1> getMoney(
-                @Url String url,
-                @Field("user_id") String user_id
-
-        );
     }
 
 

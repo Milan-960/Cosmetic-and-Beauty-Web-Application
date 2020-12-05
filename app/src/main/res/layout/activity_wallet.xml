@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="15dp"
+    android:padding="15dp"
+    tools:context=".WalletActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:text="Wallet Balance"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+
+        <TextView
+            android:id="@+id/tv_wallet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:text="Rs. 500"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+
+        <EditText
+            android:maxLength="6"
+            android:inputType="number"
+            android:id="@+id/edt_add_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Add Money"
+            android:padding="15dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2" />
+
+
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@color/colorPrimary"
+            android:hint="Add"
+            android:padding="15dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            android:textColor="@color/white" />
+
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

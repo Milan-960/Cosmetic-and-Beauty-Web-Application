@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -437,7 +436,7 @@ public class Cart extends AppCompatActivity {
 
     public class CA extends BaseAdapter {
         private TextView product_name, product_price;
-        private ImageButton remove;
+        private Button remove;
         private Spinner spin;
         private ImageView img_product;
         private ProgressDialog progressDialog;
