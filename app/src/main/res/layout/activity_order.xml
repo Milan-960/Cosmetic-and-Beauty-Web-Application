@@ -148,7 +148,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:maxLines="2"
-                android:text="Delievery Type"
+                android:text="Payment Type"
                 android:textColor="@color/colorBlack"
                 android:textSize="15sp" />
 

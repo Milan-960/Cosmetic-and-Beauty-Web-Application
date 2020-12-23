@@ -2,11 +2,12 @@ package com.example.dairy;
 
 public class Config {
 
-    public static final String BASE = "http://192.168.0.112/";
-    public static final String BASE_URL = BASE + "leather/api/Api.php?apicall=";
-    public static final String CAT_IMG_URL = BASE + "leather/category_image/";
-    public static final String PROD_IMG_URL = BASE + "leather/product_image/";
-    public static final String USER_IMG_URL = BASE + "leather/images/";
+    //    public static final String BASE = "http://192.168.0.112/";
+    public static final String BASE = "http://mydata123.pl/bu/";
+    public static final String BASE_URL = BASE + "api/Api.php?apicall=";
+    public static final String CAT_IMG_URL = BASE + "category_image/";
+    public static final String PROD_IMG_URL = BASE + "product_image/";
+    public static final String USER_IMG_URL = BASE + "images/";
     public static final String login = BASE_URL + "login";
     public static final String register = BASE_URL + "register";
     public static final String change_password = BASE_URL + "change_pwd";

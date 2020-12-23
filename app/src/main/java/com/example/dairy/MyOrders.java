@@ -2,6 +2,7 @@ package com.example.dairy;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -33,11 +34,16 @@ public class MyOrders extends AppCompatActivity {
 
     private void init() {
 
+
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("My Orders");
+
+
         listView = findViewById(R.id.listView);
         orderAdapter = new MyOrderAdapter(list, context);
         listView.setAdapter(orderAdapter);
 
-        getSupportActionBar().setTitle("My Orders");
     }
 
     private void getMyOrderDetails() {
@@ -71,6 +77,16 @@ public class MyOrders extends AppCompatActivity {
 
             }
         });
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }

@@ -109,7 +109,12 @@ public class Order extends AppCompatActivity {
     }
 
     public void place_order(View view) {
-        getMoney();
+
+        if (order_type.equals("COD")) {
+            final_order(tv_name.getText().toString(), tv_amount.getText().toString(), edt_email.getText().toString(), edt_mobile.getText().toString(), edt_address.getText().toString());
+        } else {
+            getMoney();
+        }
     }
 
     private void displayDialog(final int wallet) {

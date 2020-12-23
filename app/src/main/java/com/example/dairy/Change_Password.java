@@ -83,6 +83,8 @@ public class Change_Password extends AppCompatActivity {
 
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Change Password");
+
 
     }
 

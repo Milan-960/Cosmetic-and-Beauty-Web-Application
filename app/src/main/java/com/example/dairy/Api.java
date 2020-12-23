@@ -13,7 +13,7 @@ import retrofit2.http.Url;
 public class Api {
 
     //    private static final String root_url = "http://moviestime0017.000webhostapp.com/cart/cart/api/Api.php?apicall=";
-    private static final String root_url = Config.BASE + "leather/api/Api.php?apicall=";
+    private static final String root_url = Config.BASE + "api/Api.php?apicall=";
 //   private static final String root_url="http://192.168.0.103:9999/akil_surti/api/Api.php?apicall=";
     //private static final String root_url="http://192.168.1.6/abc/api/Api.php?apicall=";
 
