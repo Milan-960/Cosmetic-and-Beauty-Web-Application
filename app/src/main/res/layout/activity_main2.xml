@@ -42,23 +42,23 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_cart"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     </androidx.recyclerview.widget.RecyclerView>
 
-<!--
-    <Button
-    android:id="@+id/btn_placeorder"
-    android:layout_gravity="center"
-    android:layout_alignParentBottom="true"
-    android:layout_height="60dp"
-    android:layout_width="match_parent"
-    android:onClick="insertOrder"
-    android:text="Place Order"
-    android:textColor="@android:color/white"
-    >
-    </Button>-->
+    <!--
+        <Button
+        android:id="@+id/btn_placeorder"
+        android:layout_gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_height="60dp"
+        android:layout_width="match_parent"
+        android:onClick="insertOrder"
+        android:text="Place Order"
+        android:textColor="@android:color/white"
+        >
+        </Button>-->
 
 
     <!--<RelativeLayout-->

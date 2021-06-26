@@ -1,3 +1,4 @@
+
 package com.example.dairy;
 
 
@@ -13,7 +14,7 @@ import retrofit2.http.Url;
 public class Api {
 
     //    private static final String root_url = "http://moviestime0017.000webhostapp.com/cart/cart/api/Api.php?apicall=";
-    private static final String root_url = Config.BASE + "api/Api.php?apicall=";
+    private static final String root_url = com.example.dairy.Config.BASE + "api/Api.php?apicall=";
 //   private static final String root_url="http://192.168.0.103:9999/akil_surti/api/Api.php?apicall=";
     //private static final String root_url="http://192.168.1.6/abc/api/Api.php?apicall=";
 
@@ -64,14 +65,18 @@ public class Api {
     public interface PostService {
         //@GET("?key="+key)
         @GET
-        Call<Final_Model1> getRecords(@Url String url);
+
+
+        Call<com.example.dairy.Final_Model1> getRecords(@Url String url);
+
 
         @GET
-        Call<Final_Model1> getCount(@Url String url);
+
+        Call<com.example.dairy.Final_Model1> getCount(@Url String url);
 
         @FormUrlEncoded
         @POST
-        Call<Final_Model1> cart(
+        Call<com.example.dairy.Final_Model1> cart(
                 @Url String url,
                 @Field("product_id") int product_id,
                 @Field("product_price") int product_price,
@@ -81,46 +86,51 @@ public class Api {
 
 
         @GET
-        Call<Final_Model1> getcartData(
+        Call<com.example.dairy.Final_Model1> getcartData(
                 @Url String url
 
         );
 
         @GET
-        Call<Final_Model1> updatecart(
+        Call<com.example.dairy.Final_Model1> updatecart(
                 @Url String url
 
         );
 
         @GET
-        Call<Final_Model1> removeCart(
+        Call<com.example.dairy.Final_Model1> removeCart(
                 @Url String url
         );
 
 
         @GET
-        Call<Final_Model1> getCategory(
+        Call<com.example.dairy.Final_Model1> getCategory(
                 @Url String url
 
         );
 
         @FormUrlEncoded
         @POST
-        Call<Final_Model1> loginUser(
+
+
+
+        Call<com.example.dairy.Final_Model1> loginUser(
                 @Url String url,
                 @Field("user_name") String email
         );
 
         @FormUrlEncoded
         @POST
-        Call<Final_Model1> MyOrder(
+        Call<com.example.dairy.Final_Model1> MyOrder(
                 @Url String url,
                 @Field("user_id") String user_id
         );
 
         @FormUrlEncoded
         @POST
-        Call<Final_Model1> AddMoney(
+
+
+        Call<com.example.dairy.Final_Model1> AddMoney(
                 @Url String url,
                 @Field("user_id") String user_id,
                 @Field("amount") String amount
@@ -128,12 +138,12 @@ public class Api {
 
         @FormUrlEncoded
         @POST
-        Call<Final_Model1> getMoney(
+
+
+        Call<com.example.dairy.Final_Model1> getMoney(
                 @Url String url,
                 @Field("user_id") String user_id
 
         );
     }
-
-
 }

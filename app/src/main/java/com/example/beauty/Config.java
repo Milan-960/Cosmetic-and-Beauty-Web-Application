@@ -3,7 +3,7 @@ package com.example.dairy;
 public class Config {
 
     //    public static final String BASE = "http://192.168.0.112/";
-    public static final String BASE = "http://mydata123.pl/bu/";
+    public static final String BASE = "http://hmg527.online/bu/";
     public static final String BASE_URL = BASE + "api/Api.php?apicall=";
     public static final String CAT_IMG_URL = BASE + "category_image/";
     public static final String PROD_IMG_URL = BASE + "product_image/";
